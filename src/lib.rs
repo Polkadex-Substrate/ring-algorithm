@@ -1,4 +1,10 @@
 #![cfg_attr(feature = "__internal_inject_debug", recursion_limit = "8")]
+#![cfg_attr(not(target_env = "sgx"), no_std)]
+#![cfg_attr(target_env = "sgx", feature(rustc_private))]
+
+#[cfg(not(target_env = "sgx"))]
+extern crate sgx_tstd as std;
+use std::vec::Vec;
 mod sealed {
     pub trait SizedExt: std::marker::Sized + std::fmt::Debug + std::fmt::Display {}
     impl<T> SizedExt for T where T: std::marker::Sized + std::fmt::Debug + std::fmt::Display {}
