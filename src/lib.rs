@@ -6,9 +6,6 @@
 extern crate sgx_tstd as std;
 use std::vec::Vec;
 mod sealed {
-    #[cfg(not(target_env = "sgx"))]
-    extern crate sgx_tstd as std;
-    
     pub trait SizedExt: std::marker::Sized + std::fmt::Debug + std::fmt::Display {}
     impl<T> SizedExt for T where T: std::marker::Sized + std::fmt::Debug + std::fmt::Display {}
     #[cfg(not(feature = "__internal_inject_debug"))]
