@@ -20,7 +20,7 @@ sgx_tstd = { rev = "v1.1.3", git = "https://github.com/apache/teaclave-sgx-sdk.g
 [dependencies]
 num-traits = { version = "0.2", git = "https://github.com/mesalock-linux/num-traits-sgx.git" }
 num-bigint = { version = "0.2.5", git = "https://github.com/mesalock-linux/num-bigint-sgx.git" }
-take_mut = "0.2.2"
+take_mut = {version="0.2.2", git="https://github.com/mesalock-linux/take_mut-sgx.git"}
 
 
 #[dev-dependencies]
